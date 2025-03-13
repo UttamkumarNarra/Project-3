@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>WELCOME TO USER PAGE</h1>
+        <p class="welcome-message">Hello, <span th:text="${firstname}"> </span> User</p>
+    </div>
+    <a th:href="@{/Chandu/login}"> back to login</a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-6 col-xl-4">
+            <h1>Updated Form</h1>
+                <form id="myform" th:action="@{/Chandu/Update}" th:object="${user}" method="post">
+                    
+                    <!-- Readonly User ID Field -->
+                    <div class="form-floating p-1">
+                        <input type="text" class="form-control" name="userId" id="userId" th:field="*{userId}" readonly/>
+                        <label for="userId">User ID</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-floating p-1">
+                            <input type="text" class="form-control" id="firstname" placeholder="First Name" th:field="*{firstname}" />
+                            <label for="firstname">First Name</label>
+                        </div>
+                        <div class="form-floating p-1">
+                            <input type="text" class="form-control" id="lastname" placeholder="Last Name" th:field="*{lastname}" />
+                            <label for="lastname">Last Name</label>
+                        </div>
+                        <div class="form-floating p-1">
+                            <input type="email" class="form-control" id="email" placeholder="Email ID" th:field="*{email}" />
+                            <label for="email">Email ID</label>
+                        </div>
+                        <div class="form-floating p-1">
+                            <input type="tel" class="form-control" id="mobile" placeholder="Mobile Number" th:field="*{mobile}" />
+                            <label for="mobile">Mobile Number</label>
+                        </div>
+                        <div class="form-floating p-1">
+                            <input type="text" class="form-control" id="username" placeholder="Username" th:field="*{username}" readonly />
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="form-floating p-1">
+                            <input type="password" class="form-control" id="password" placeholder="Password" th:field="*{password}" />
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="p-1 mt-2">
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </div>
+                        <div class="p-1 mt-2">
+                            <a th:href="@{/Chandu/UsersDetails}" class="btn btn-secondary w-100">Back to List</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
